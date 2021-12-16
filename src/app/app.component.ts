@@ -16,4 +16,8 @@ export class AppComponent {
   onNewNoteButtonPress(){
     this.router.navigate(['new_note']);
   }
+
+  onNotesListButtonPress(){
+    this.router.navigate(['']);
+  }
 }

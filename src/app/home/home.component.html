@@ -1,7 +1,7 @@
 <br>
 <h1>Home Page!</h1>
 
-<button [disabled] = 'createDisabled'>Create Note</button>
+<button [disabled] = 'createDisabled' (click) = 'onNewNoteButtonPress()'>Create Note</button>
 
 <button [disabled] = 'apiDisabled' (click) = 'onEventBindingButtonPress()'>Feeling Lucky</button>
 <div>{{apiError}}</div>
