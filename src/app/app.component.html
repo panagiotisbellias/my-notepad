@@ -329,6 +329,8 @@
 
   <input type="hidden" #selection>
 
+  <button (click) = 'onNotesListButtonPress()'>See Notes</button><br/>
+  <button [disabled] = 'createDisabled' (click) = 'onNewNoteButtonPress()'>Create Note</button>
   <router-outlet></router-outlet>
 
   <!-- Links -->

@@ -7,19 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  createDisabled = true;
   apiDisabled = true;
   apiError = '';
 
   constructor() { }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.createDisabled = false;
-    }, 1000);
+
     setTimeout(() => {
       this.apiDisabled = false;
-    }, 4000);
+    }, 3000);
   }
 
   onEventBindingButtonPress(){

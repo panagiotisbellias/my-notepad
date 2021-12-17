@@ -1,1 +1,11 @@
-<p>new-note works!</p>
+<br>
+<h1>Create a new note!</h1>
+
+<h2>Fill info for your note</h2>
+<input type="text" ([ngModel]) = "note_title" placeholder="Note Title"/>
+<input type="text" ([ngModel]) = "note_body" placeholder="Write down your note"/>
+<div>
+  <p>Note with title: {{note_title}} and body: {{note_body}} created!</p>
+</div>
+<button onclick="console.log(note_title + note_body);">Check</button>
+<br>

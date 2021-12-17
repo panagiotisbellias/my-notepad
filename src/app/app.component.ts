@@ -9,8 +9,15 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'my-notepad';
 
-  constructor(private router: Router) {
+  createDisabled = true;
 
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+
+    setTimeout(() => {
+      this.createDisabled = false;
+    }, 2000);
   }
 
   onNewNoteButtonPress(){
