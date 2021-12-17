@@ -1,11 +1,11 @@
 <br>
-<h1>Create a new note!</h1>
+<h3>Create a new note!</h3>
 
-<h2>Fill info for your note</h2>
-<input type="text" ([ngModel]) = "note_title" placeholder="Note Title"/>
-<input type="text" ([ngModel]) = "note_body" placeholder="Write down your note"/>
+<h4>Fill info for your note</h4>
+<input type="textarea" [(ngModel)] = 'note_title' placeholder="Note Title"/>
+<input type="text" [(ngModel)] = 'note_body' placeholder="Write down your note"/>
 <div>
-  <p>Note with title: {{note_title}} and body: {{note_body}} created!</p>
+  <p>Note with title: {{note_title}} and body: {{note_body}} would be created!</p>
 </div>
-<button onclick="console.log(note_title + note_body);">Check</button>
-<br>
+<button (click) = 'onAddNoteButtonPress(note_title, note_body)'>Add Note</button>
+<br><br>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AppComponent } from '../app.component'
 
 @Component({
   selector: 'app-new-note',
@@ -8,12 +7,15 @@ import { AppComponent } from '../app.component'
 })
 export class NewNoteComponent implements OnInit {
 
-  createDisabled = true;
-  note_title = "my-note";
-  note_body = "";
+  note_title = 'my-note';
+  note_body = '';
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {}
+
+  onAddNoteButtonPress(title: string, body: string){
+    
+  }
 
 }

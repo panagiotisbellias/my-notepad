@@ -1,9 +1,24 @@
 <br>
-<h1>Home Page!</h1>
 
-<button [disabled] = 'apiDisabled' (click) = 'onEventBindingButtonPress()'>Feeling Lucky</button>
-<div>{{apiError}}</div>
+<h3>Notes' List</h3>
 
-<h2>Notes' List</h2>
-<div></div>
+
+<div>
+  <table border="3">
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Modify?</th>
+      <th>Delete?</th>
+    </tr>
+    <tr *ngFor = 'let noteItem of notesList'> <!-- sort by date-->
+      <td>{{noteItem.id}}</td>
+      <td>{{noteItem.title}}</td>
+      <td>{{noteItem.body}}</td>
+      <td><button (click) = 'onModifyNoteButtonPress(noteItem.id)'>MODIFY</button></td> <!-- change to one option for another screen-->
+      <td><button (click) = 'onDeleteNoteButtonPress(noteItem.id)'>DELETE</button></td>
+    </tr>
+  </table>
+</div>
 <br>

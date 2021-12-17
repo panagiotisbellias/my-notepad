@@ -33,7 +33,7 @@
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: #1976d2;
+    background-color: #4CAF50;
     color: white;
     font-weight: 600;
   }
@@ -126,7 +126,7 @@
   }
 
   .card.highlight-card {
-    background-color: #1976d2;
+    background-color: #4CAF50;
     color: white;
     font-weight: 600;
     border: none;
@@ -330,8 +330,15 @@
   <input type="hidden" #selection>
 
   <button (click) = 'onNotesListButtonPress()'>See Notes</button><br/>
-  <button [disabled] = 'createDisabled' (click) = 'onNewNoteButtonPress()'>Create Note</button>
+  <button (click) = 'onNewNoteButtonPress()'>Create Note</button>
   <router-outlet></router-outlet>
+
+  <button (click) = 'onEventBindingButtonPress()'>Feeling Lucky</button>
+  <div>
+  <ol>
+    <li *ngFor = 'let jokeItem of jokesList'>{{jokeItem.joke}}}</li>
+  </ol>
+  </div>
 
   <!-- Links -->
   <div class="card-container">

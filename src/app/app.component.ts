@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { JokeValue, OpenApiResponse } from './models/joke.model';
+import { OpenApiIntegrationService } from './services/open-api-integration.service';
 
 @Component({
   selector: 'app-root',
@@ -8,18 +10,27 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'my-notepad';
+  apiError = '';
+  jokesList: JokeValue[] = [];
 
-  createDisabled = true;
-
-  constructor(private router: Router) {}
+  constructor(private router: Router, private service: OpenApiIntegrationService) {}
 
   ngOnInit(): void {
-
-    setTimeout(() => {
-      this.createDisabled = false;
-    }, 2000);
   }
 
+  onEventBindingButtonPress(){
+    this.service.getOpenApiResult().subscribe(result =>{this.getJokeList(result)});
+  }
+
+  getJokeList(res: OpenApiResponse){
+    this.jokesList = res.value;
+    console.log(res);
+  }
+/*
+  onEventBindingButtonPress(){
+    this.apiError = 'Temporary, not available. Sorry!'
+  }
+*/
   onNewNoteButtonPress(){
     this.router.navigate(['new_note']);
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NoteValue } from '../models/note.model';
 
 @Component({
   selector: 'app-home',
@@ -7,20 +8,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  apiDisabled = true;
-  apiError = '';
+  notesList: NoteValue[] = [];
 
-  constructor() { }
-
-  ngOnInit(): void {
-
-    setTimeout(() => {
-      this.apiDisabled = false;
-    }, 3000);
+  constructor() {
+    let note1: NoteValue = {
+      id: 1,
+      title: 'Demo Title',
+      body: 'Demo Body, example... blahblah'
+    };
+    let note2: NoteValue = {
+      id: 2,
+      title: 'Demo Title 2',
+      body: 'Demo Body 2, example... blahblah'
+    };
+    this.notesList.push(note1);
+    this.notesList.push(note2);
   }
 
-  onEventBindingButtonPress(){
-    this.apiError = 'Temporary, not available. Sorry!'
+  ngOnInit(): void {
+    
+  }
+
+  onModifyNoteButtonPress(id: number){
+    
+  }
+
+  onDeleteNoteButtonPress(id: number){
+    delete this.notesList[id];
   }
 
 }
